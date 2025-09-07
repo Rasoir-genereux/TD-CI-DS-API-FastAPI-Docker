@@ -6,6 +6,7 @@ pytest-asyncio
 httpx==0.23.3
 pytest-cov
 coverage
+trio
 
 # Lint et type check
 flake8
