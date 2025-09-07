@@ -76,4 +76,4 @@ Technologies Used
 > If you don't have a favicon configured, the server will return a ```404```.
 
 
-![CI](https://github.com/jao81/TD-CI-CD-Data-Science-API-FastAPI-Docker/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Rasoir-genereux/TD-CI-DS-API-FastAPI-Docker/actions/workflows/CI.yml/badge.svg)
