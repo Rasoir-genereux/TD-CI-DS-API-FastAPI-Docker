@@ -74,3 +74,6 @@ Technologies Used
 > [!WARNING]
 >For ```/favicon.ico```, browsers automatically request the ```favicon.ico``` file when accessing a URL.\
 > If you don't have a favicon configured, the server will return a ```404```.
+
+
+![CI](https://github.com/Rasoir-genereux/TD-CI-DS-API-FastAPI-Docker/actions/workflows/CI.yml/badge.svg)
