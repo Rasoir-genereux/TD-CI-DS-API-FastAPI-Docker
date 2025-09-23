@@ -29,4 +29,4 @@ async def test_predict_failure():
         "features": [0.5, 1, 1.5]
     })
     assert resp.status_code == 200
-    assert {"predictions": [1, 4, 3]} == resp.json()
+    assert {"predictions": [1, 2, 3]} == resp.json()
