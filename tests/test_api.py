@@ -17,7 +17,8 @@ async def test_predict_unprocessable_entity():
     async with AsyncClient(app=app, base_url="http://test") as client:
         resp = await client.post("/predict", json={
         "feature1": 3.5,
-        "feature2": 1.2
+        "feature2": 1.2,
+        "feature3": 4
     })
     assert resp.status_code == 422
 
