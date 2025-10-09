@@ -9,6 +9,8 @@ class PredictionRequest(BaseModel):
 
 @app.post("/predict")
 def predict_endpoint(data: PredictionRequest):
+    if not data.features:  # liste vide
+        return {"predictions": []}
     predictions = predict(data.features)
     return {"predictions": predictions}
 
