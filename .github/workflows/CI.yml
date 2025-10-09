@@ -1,31 +1,16 @@
-name: CI–FastAPI
+name: CI – FastAPI
 
 on:
   pull_request:
-    branches: [main]
-  push:
-    branches: [dev]
+    branches: [main, dev]
+
 
 permissions:
   contents: read
 
 jobs:
-  security:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-      - name: Install safety
-        run: pip install safety==1.10.3
-      - name: Check security
-        run: safety check || true
-
-
   test:
     runs-on: ubuntu-24.04
-    needs: security
     steps:
       # Récupérer le code
       - name: Checkout code
@@ -41,15 +26,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
           pip list
-
-      # Vérifier la sécurité des dépendances (optionnel)
-      - name: Check for security issues
-        run: |
-          safety check  || true
       # Tests unitaires / async
       - name: Run tests
         run: |
           export PYTHONPATH=$(pwd)
           pytest --maxfail=1 --disable-warnings -q --cov=app --cov-report=xml --cov-report=term-missing
-
-      
